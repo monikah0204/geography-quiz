@@ -8,13 +8,24 @@ public class Quiz {
     public Quiz(Scanner scanner) {
         this.scanner = scanner;
     }
-    public void runQuiz(){
+
+    public void runQuiz() throws InterruptedException {
 
         QuizBody quizBody = new QuizBody();
 
         List<QuizPart> quiz = quizBody.getQuiz();
 
+        System.out.println("Welcome");
+        Thread.sleep(1500);
+
+        System.out.println("Good luck");
+        Thread.sleep(1000);
+
         System.out.println("Starting quiz");
+
+
+        Thread.sleep(2000);
+
 
         quiz.forEach(quizPart -> {
             System.out.println(quizPart.getQuestion());
@@ -26,15 +37,18 @@ public class Quiz {
             System.out.print("Choose answer: ");
             int userAnswer = scanner.nextInt();
 
-            if(userAnswer == quizPart.getCorrectAnswer()){
+            if (userAnswer == quizPart.getCorrectAnswer()) {
                 System.out.println("Correct");
-            }else {
+            } else {
                 System.out.println("Incorrect");
             }
             System.out.println("\n");
         });
 
-        System.out.println("Thank you for your answers");
+        Thread.sleep(1000);
+        System.out.println("Thank you");
 
+        Thread.sleep(1500);
+        System.out.println("Bye");
     }
 }

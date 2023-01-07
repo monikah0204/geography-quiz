@@ -5,6 +5,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Quiz geographyQuiz = new Quiz(scanner);
 
-        geographyQuiz.runQuiz();
+        try {
+            geographyQuiz.runQuiz();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
